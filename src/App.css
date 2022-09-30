@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Oswald&family=Poppins&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&family=Roboto:wght@500&display=swap');
 
 * {
   margin: 0;
@@ -10,9 +10,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  transition: all 400ms;
+}
 
 nav {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   transition: all 500ms ease;
 }
 
@@ -24,30 +27,181 @@ nav {
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
-  background: #d3152e;
+  background: #fff;
   transition: width 0.3s ease;
 
 }
 
 .nav-link:hover::after {
-  width: 50%;
-}
-
-.active::after {
-  content: '';
   width: 75%;
-  height: 3px;
+}
+
+.card {
+  height: 70vh;
   position: absolute;
-  bottom: -5px;
-  left: 50%;
-  background: #d3152e;
-
+  right: 12.5%;
+  font-family: 'Inter', sans-serif;
 }
 
-footer {
-  font-family: 'Poppins'
+.contain {
+  height: 70vh;
 }
 
+@media screen and (max-width:1024px) {
+  .card {
+    height: fit-content;
+    position: absolute;
+    right: 8.5%;
+  }
+}
+
+.name {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav:hover {
+  background-color: white;
+  color: blueviolet;
+}
+
+.personal-image {
+  max-height: 65vh;
+  width: auto;
+}
+
+.main-wrapper {
+  height: 100vh;
+}
+
+.about {
+  padding-top: 20px;
+}
+
+
+
+/* .about::before {
+  content: '';
+  width: 20%;
+  height: 3px;
+  background-color: blueviolet;
+  position: absolute;
+  transform: translateX(-40%);
+  top: -2%;
+}
+
+.about::after {
+  content: '';
+  width: 20%;
+  height: 3px;
+  background-color: blueviolet;
+  position: absolute;
+  bottom: 2%;
+}
+*/
+
+@media screen and (min-width:1024px) {
+  .paragraph {
+    max-width: 60vw;
+  }
+}
+
+h2 {
+  font-family: 'Poppins';
+}
+
+p {
+  font-family: 'Inter';
+}
+
+.btn1 {
+  padding: 10px;
+  align-items: center;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+  color: blueviolet;
+  transition: all 400ms ease-in;
+  margin-right: 10px;
+}
+
+.btn2 {
+  padding: 10px;
+  align-items: center;
+  border: 2px solid blueviolet;
+  background: blueviolet;
+  border-radius: 10px;
+  color: #fff;
+  transition: all 400ms ease-out;
+}
+
+.btn1:hover {
+  background: blueviolet;
+  color: #fff;
+}
+
+.btn2:hover {
+  background: #fff;
+  color: blueviolet;
+}
+
+#skills {
+  font-family: 'Poppins', sans-serif;
+}
+
+.portfolio__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.portfolio__item {
+  background: rgb(124, 58, 237);
+  padding: 1.3rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  max-width: 350px;
+  cursor: pointer;
+}
+
+
+.portfolio__item-image {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.portfolio__item h3 {
+  margin: 1.2rem 0 2rem;
+}
+
+@media screen and (max-width:1024px) {
+  .portfolio__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .portfolio__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.btn {
+  padding: 10px;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  color: blueviolet;
+  transition: all 200ms;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
 
 /* Hamburger Menu */
 .hamburger {
@@ -96,164 +250,19 @@ footer {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
 
-.address {
-  max-width: 400px;
-  font-family: 'Inter', sans-serif;
+.details {
+  transition: all 500ms
 }
 
-h1,
-h2,
-h4,
-h5 {
-  font-family: 'Oswald', sans-serif;
+.concealed {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
 }
 
-h3 {
-  font-family: 'Inter', sans-serif;
-}
-
-p {
-  font-family: 'Inter', sans-serif;
-}
-
-.avanage {
-  background: rgb(224, 17, 17);
-  background: linear-gradient(175deg, rgba(224, 17, 17, 1) 0%, rgba(75, 48, 53, 1) 100%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
-}
-
-.header-text {
-  font-size: 72px;
-  font-weight: 600;
-}
-
-@media screen and (max-width:768px) {
-  .header-text {
-    font-size: 36px;
-  }
-
-  .logo {
-    max-width: 150px;
-    height: auto;
-  }
-}
-
-.slide-left {
-  animation: slideleft 1.5s linear forwards;
-}
-
-@keyframes slideleft {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-}
-
-.slide-right {
-  animation: slideright 1.5s linear forwards;
-}
-
-@keyframes slideright {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.products,
-.management {
-  padding-top: 80px;
-}
-
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
-
-.accordion:hover {
-  background-color: #ccc;
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  overflow: hidden;
-}
-
-.product__card {
-  height: 400px;
-  max-width: 300px;
-  transition: all 400ms ease;
-  cursor: pointer;
-}
-
-.product__card img {
-  height: 250px;
-  width: auto;
-  object-fit: cover;
-}
-
-.product__container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.big {
-  font-size: 72px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
+.show {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
 }
