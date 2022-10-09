@@ -1,0 +1,130 @@
+            <section className="flex items-center justify-center mt-8 p-4 md:p-6 h-1/2" id="skills">
+                <div className=" md:w-3/4 h-full flex flex-col lg:flex-row shadow-xl justify-center">
+                    <div className="bg-violet-600 text-white  lg:w-1/2  p-4">
+                        <h2 className="text-xl text-bold text-center mb-4">FRONTEND DEVELOPMENT</h2>
+                        <div className="flex flex-row flex-wrap md:space-x-8 space-x-4 items-center justify-center text-left text-white md:p-4 p-2">
+                            <div className="flex flex-col space-y-4">
+                                <a href="#" className="text-white text-bold text-lg flex space-x-4 items-center">
+                                    <BiMedal className='text-2xl text-white text-left' /><span
+                                        className="text-bold text-lg">HTML</span>
+                                </a>
+                                <a href="#" className="text-white text-bold text-lg flex space-x-4 items-center">
+                                    <BiMedal className='text-2xl text-white text-left' /><span
+                                        className="text-bold text-lg">CSS</span>
+                                </a>
+                                <a href="#" className="text-white text-bold text-lg flex space-x-4 items-center">
+                                    <BiMedal className='text-2xl text-white text-left' /><span
+                                        className="text-bold text-lg">JavaScript</span>
+                                </a>
+                                <a href="#" className="text-white text-bold text-lg flex space-x-4 items-center">
+                                    <BiMedal className='text-2xl text-white text-left' /><span
+                                        className="text-bold text-lg">Bootstrap</span>
+                                </a>
+
+                            </div>
+                            <div className="flex flex-col space-y-4">
+                                <a href="#" className="text-white text-bold text-lg flex space-x-4 items-center">
+                                    <BiMedal className='text-2xl text-white text-left' /><span
+                                        className="text-bold text-lg">JQUERY</span>
+                                </a>
+                                <a href="#" className="text-white text-bold text-lg flex space-x-4 items-center">
+                                    <BiMedal className='text-2xl text-white text-left' /><span
+                                        className="text-bold text-lg">React JS</span>
+                                </a>
+                                <a href="#" className="text-white text-bold text-lg flex space-x-4 items-center">
+                                    <BiMedal className='text-2xl text-white text-left' /><span
+                                        className="text-bold text-lg">Tailwind CSS</span>
+                                </a>
+                                <a href="#" className="text-white text-bold text-lg flex space-x-4 items-center">
+                                    <BiMedal className='text-2xl text-white text-left' /><span
+                                        className="text-bold text-lg">Next JS</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="lg:w-1/2 p-4">
+                        <h2 className="text-xl text-bold text-center">BACKEND DEVELOPMENT</h2>
+                        <div className="flex flex-row flex-wrap space-x-8 text-left p-6 items-center justify-center">
+                            <a href="#" className=" text-bold text-lg flex space-x-4 items-center">
+                                <BiMedal className='text-2xl text-left' /><span
+                                    className="text-bold text-lg">Django</span>
+                            </a>
+                            <a href="#" className=" text-bold text-lg flex space-x-4 items-center">
+                                <BiMedal className='text-2xl text-left' /><span
+                                    className="text-bold text-lg">Python</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="portfolio" className="md:p-16 mt-8 p-6">
+                <h2 className="text-center text-3xl text-violet-600 font-semibold p-6 tracking-wider">RECENT WORK</h2>
+
+                <div className='flex flex-wrap gap-4 justify-center'>
+                    {
+                        data.map((project) => {
+                            return (
+                                <div key={project.name} className='md:flex'>
+                                    <article className={`portfolio__item text-white`} onClick={() => seeDetails(project.name)}>
+                                        <div className="portfolio__item-image">
+                                            <img src={project.picture} alt={project.name} />
+                                        </div>
+                                        <h3>{project.name}</h3>
+                                        <a href={project.link} rel="noreferrer" className="btn" target='__blank'>Visit
+                                            Website</a>
+                                    </article>
+                                    <div className={`p-4 details ${showDetails === project.name ? 'max-w-sm' : 'h-0 p-0 w-0 overflow-hidden'}`}>
+                                        <div className='flex flex-col space-y-4 text-gray-800'>
+                                            {project.info.map((pro) => {
+                                                return (
+                                                    <p className='flex space-x-4 items-center'><GoPrimitiveDot /> <span>{pro}</span></p>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            )
+                        })
+                    }
+                </div>
+            </section>
+            <footer
+                className="bg-violet-600 md:px-32 p-16 flex flex-col space-y-12 md:space-y-0 md:flex-row mt-16 justify-around">
+                <div className="">
+                    <div className="nav-logo flex items-center">
+                        {/* <img src={logo} className="w-8 h-8" /> */}
+                        <h2 className="text-white text-4xl mx-2 font-bold text-center">fuadCodes</h2>
+                    </div>
+                    <p className="mt-6 text-white">
+                        &copy; Olaleye Fuad. 2022.
+                    </p>
+                    <div className="flex flex-row space-x-6 mt-4">
+                        <a href="github.com/theylovefuad"><AiFillGithub className='text-gray-400 text-2xl hover:text-slate-800' /></a>
+                        <a href="instagram.com/theylovefuad"><AiOutlineInstagram className='text-gray-400 text-2xl hover:text-slate-800' /></a>
+                        <a href=""><AiOutlineTwitter className='text-gray-400 text-2xl hover:text-slate-800' /></a>
+                        <a href=""><AiOutlineGitlab className='text-gray-400 text-2xl hover:text-slate-800' /></a>
+
+                    </div>
+                </div>
+                <div className="text-cityBlue">
+                    <div className="flex flex-row space-x-8">
+                        <div className="flex flex-col space-y-4">
+                            <a href="#home" className="text-white">Home</a>
+                            <a href="#about" className="text-white">About</a>
+                            <a href="#skills" className="text-white">Experience</a>
+                            <a href="#portfolio" className="text-white">Portfolio</a>
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                            <a href="#about" className="text-white">Contact</a>
+                            <a href="#" className="text-white flex space-x-4 items-center"><BsTelephoneFill className='text-gray-400' /><span>+234
+                                704 7293 841</span></a>
+                            <a href="#" className="text-white flex space-x-4 items-center"><AiOutlineMail className='text-gray-400' /><span>leyefuad@gmail.com</span></a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </footer>

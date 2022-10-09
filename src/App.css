@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital,wght@0,800;1,700&family=Quicksand&display=swap');
 
 * {
   margin: 0;
@@ -6,17 +6,74 @@
   box-sizing: border-box;
 }
 
+body {
+  background: rgb(10, 10, 10);
+
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  transition: all 400ms;
+.gradient {
+  background: -webkit-linear-gradient(#b006ff, #2aa6e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-nav {
-  font-family: 'Poppins', sans-serif;
-  transition: all 500ms ease;
+.header {
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.9;
+  background-image: radial-gradient(#12b 1.05px, transparent 1.05px), radial-gradient(#12b 1.05px, #000000 1.05px);
+  background-size: 42px 42px;
+  background-position: 0 0, 21px 21px;
+}
+
+.pizza-svg {
+  width: 40px;
+  overflow: visible;
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+h1 {
+  font-family: 'Montserrat';
+  font-weight: 800;
+  font-size: 64px;
+  color: #fff
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 24px
+  }
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #9CA3AF;
+}
+
+h4 {
+  font-family: 'Quicksand';
+  font-size: 24px;
+}
+
+.stack span {
+  font-family: 'Quicksand';
+}
+
+.stack article {
+  font-size: 120px;
 }
 
 .nav-link::after {
@@ -36,79 +93,6 @@ nav {
   width: 75%;
 }
 
-.card {
-  height: 70vh;
-  position: absolute;
-  right: 12.5%;
-  font-family: 'Inter', sans-serif;
-}
-
-.contain {
-  height: 70vh;
-}
-
-@media screen and (max-width:1024px) {
-  .card {
-    height: fit-content;
-    position: absolute;
-    right: 8.5%;
-  }
-}
-
-.name {
-  font-family: 'Roboto', sans-serif;
-}
-
-nav:hover {
-  background-color: white;
-  color: blueviolet;
-}
-
-.personal-image {
-  max-height: 65vh;
-  width: auto;
-}
-
-.main-wrapper {
-  height: 100vh;
-}
-
-.about {
-  padding-top: 20px;
-}
-
-
-
-/* .about::before {
-  content: '';
-  width: 20%;
-  height: 3px;
-  background-color: blueviolet;
-  position: absolute;
-  transform: translateX(-40%);
-  top: -2%;
-}
-
-.about::after {
-  content: '';
-  width: 20%;
-  height: 3px;
-  background-color: blueviolet;
-  position: absolute;
-  bottom: 2%;
-}
-*/
-
-@media screen and (min-width:1024px) {
-  .paragraph {
-    max-width: 60vw;
-  }
-}
-
-h2 {
-  font-family: 'Poppins';
-}
-
 p {
   font-family: 'Inter';
 }
@@ -116,35 +100,44 @@ p {
 .btn1 {
   padding: 10px;
   align-items: center;
-  border: 2px solid blueviolet;
-  border-radius: 10px;
-  color: blueviolet;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
   transition: all 400ms ease-in;
-  margin-right: 10px;
+  margin-right: 5px;
+  font-family: 'Quicksand';
 }
 
 .btn2 {
   padding: 10px;
   align-items: center;
-  border: 2px solid blueviolet;
-  background: blueviolet;
-  border-radius: 10px;
+  border: 2px solid #2aa6e5;
+  background: #2aa6e5;
+  border-radius: 5px;
   color: #fff;
   transition: all 400ms ease-out;
+  font-family: 'Quicksand';
+
 }
 
-.btn1:hover {
-  background: blueviolet;
+.btn3 {
+  padding: 10px;
+  align-items: center;
+  border: none;
+  background: linear-gradient(#b006ff, #2aa6e5);
+  border-radius: 5px;
   color: #fff;
+  transition: all 400ms ease-out;
+  font-family: 'Quicksand';
+
 }
 
-.btn2:hover {
-  background: #fff;
-  color: blueviolet;
+footer {
+  background-color: #000000;
 }
 
-#skills {
-  font-family: 'Poppins', sans-serif;
+.footer__options {
+  font-family: 'Quicksand';
 }
 
 .portfolio__container {
@@ -155,14 +148,18 @@ p {
 }
 
 .portfolio__item {
-  background: rgb(124, 58, 237);
-  padding: 1.3rem;
-  border: 1px solid transparent;
-  transition: var(--transition);
+  background: rgb(15, 15, 15);
+  border: 1px solid rgb(34, 34, 34);
+  border-radius: 8px;
+  padding: 1.1rem;
   max-width: 350px;
   cursor: pointer;
+  transition: all 500ms ease;
 }
 
+.portfolio__item:hover {
+  background: #2aa6e5;
+}
 
 .portfolio__item-image {
   border-radius: 1.5rem;
@@ -170,37 +167,14 @@ p {
 }
 
 .portfolio__item h3 {
-  margin: 1.2rem 0 2rem;
+  font-family: 'Inter', sans-serif;
+  margin: 1rem 0 1.5rem;
 }
 
 @media screen and (max-width:1024px) {
-  .portfolio__container {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+  .header {
+    height: fit-content;
   }
-}
-
-@media screen and (max-width:600px) {
-  .portfolio__container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-.btn {
-  padding: 10px;
-  align-items: center;
-  background: white;
-  border-radius: 10px;
-  color: blueviolet;
-  transition: all 200ms;
-  margin-right: 10px;
-}
-
-.btn:hover {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
 }
 
 /* Hamburger Menu */
@@ -220,7 +194,7 @@ p {
   left: 0;
   width: 20px;
   height: 2px;
-  background-color: #000;
+  background-color: #fff;
   transform: rotate(0);
   transition: all 0.5s;
 }
