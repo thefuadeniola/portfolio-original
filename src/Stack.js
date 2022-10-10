@@ -1,5 +1,5 @@
 import { SiDjango, SiJquery, SiTailwindcss, SiNextdotjs, SiFirebase } from 'react-icons/si'
-import { FaReact, FaBootstrap } from 'react-icons/fa'
+import { FaReact, FaBootstrap, FaWordpress } from 'react-icons/fa'
 import { IoLogoCss3, IoLogoJavascript } from 'react-icons/io'
 import { AiFillHtml5 } from 'react-icons/ai'
 
@@ -41,7 +41,7 @@ export const stack = [
         icon: <SiFirebase />
     },
     {
-        name: 'Next JS',
-        icon: <SiNextdotjs />
+        name: 'WordPress',
+        icon: <FaWordpress />
     }
 ]
