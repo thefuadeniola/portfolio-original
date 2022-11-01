@@ -101,7 +101,7 @@ const Header = () => {
                         })}</motion.h1>
                     <div className='border-l-4 border-blue p-6 py-0 max-w-md text-sm font-thin'>
                         <h4 className='mb-4 text-blue'>Olaleye Fuad, Frontend Developer</h4>
-                        <p className='text-left text-white leading-loose'>As an 18 year old developer, I have taken second nature in bringing aesthetics and functionality to reality using code.<br />
+                        <p className='text-left text-white leading-loose'>As a young developer, I have taken second nature in bringing aesthetics and functionality to reality using code.<br />
                             <a href='https://github.com/theylovefuad' className='underline'>Go to Github</a>
                         </p>
                     </div>
